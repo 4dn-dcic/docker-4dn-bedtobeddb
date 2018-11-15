@@ -28,6 +28,11 @@ RUN apt-get update -y && apt-get install -y \
     zlib1g-dev \
     libmysqlclient-dev
     
+# download tools
+WORKDIR /usr/local/bin
+COPY downloads.sh .
+RUN . downloads.sh
+
 # set path
 ENV PATH=/usr/local/bin/scripts:$PATH
     

@@ -28,6 +28,9 @@ RUN apt-get update -y && apt-get install -y \
     zlib1g-dev \
     libmysqlclient-dev
     
+# installing python libraries
+RUN pip install scipy==1.1.0
+
 # download tools
 WORKDIR /usr/local/bin
 COPY downloads.sh .

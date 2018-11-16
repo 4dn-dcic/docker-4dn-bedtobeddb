@@ -25,6 +25,7 @@ inputs:
   type: string
   inputBinding:
    position: 3
+  default: "."
 
 outputs:
  beddbfile:

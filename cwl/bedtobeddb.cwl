@@ -6,7 +6,7 @@ cwlVersion: v1.0
 
 requirements:
 - class: DockerRequirement
-  dockerPull: "4dndcic/4dn-bedtobeddb:v1"
+  dockerPull: "4dndcic/4dn-bedtobeddb:v2"
 
 - class: "InlineJavascriptRequirement"
 

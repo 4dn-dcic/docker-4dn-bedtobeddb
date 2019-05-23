@@ -7,8 +7,7 @@ ASSEMBLY=$2
 OUTDIR=$3
 
 FILE_BASE=$(basename $INPUT)
-FILE_NAME=${FILE_BASE%.*}
-echo $FILE_NAME
+FILE_NAME=${FILE_BASE%%.*}
 
 mkfifo pp
 
@@ -20,7 +19,6 @@ fi
 gunzip -c $INPUT > pp.bed
 
 outputfile="$OUTDIR/$FILE_NAME.beddb"
-echo $outputfile
 
 clodius aggregate bedfile \
   --assembly $ASSEMBLY -o $outputfile \

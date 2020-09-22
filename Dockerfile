@@ -27,7 +27,7 @@ RUN apt-get update -y && apt-get install -y \
     wget \
     zlib1g-dev \
     libmysqlclient-dev \
-    sqlite3
+    libsqlite3-dev
 
 # install python 3.6
 RUN wget https://www.python.org/ftp/python/3.6.0/Python-3.6.0.tar.xz
@@ -37,14 +37,11 @@ RUN ./configure
 RUN make
 RUN make altinstall
 
-RUN which pip3.6
 
 # installing python libraries
 RUN pip3.6 install --upgrade pip
 RUN pip3.6 install cython==0.29.21
-#RUN pip3 install scipy==1.5.2
-#RUN pip3 install numpy==1.19.2
-#RUN pip3 install pybbi==0.1.2
+
 
 # download tools
 WORKDIR /usr/local/bin

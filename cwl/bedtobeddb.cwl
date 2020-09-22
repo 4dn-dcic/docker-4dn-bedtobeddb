@@ -16,7 +16,7 @@ inputs:
   inputBinding:
    position: 1
 
- chromsizes:
+ chromsizes_file:
   type: File
   inputBinding:
    position: 2

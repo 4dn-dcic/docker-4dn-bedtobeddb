@@ -3,5 +3,8 @@
        "class": "File",
        "path": "../test_files/test_file1.bed.gz"
    },
-   "assembly": "hg38"
+   "chromsizes": {
+       "class": "File",
+       "path": "../test_files/4DNFI823LSII.chrom.sizes"
+    }
 }

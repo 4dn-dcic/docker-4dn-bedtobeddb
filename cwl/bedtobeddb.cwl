@@ -6,7 +6,7 @@ cwlVersion: v1.0
 
 requirements:
 - class: DockerRequirement
-  dockerPull: "4dndcic/4dn-bedtobeddb:v1"
+  dockerPull: "4dndcic/4dn-bedtobeddb:v3"
 
 - class: "InlineJavascriptRequirement"
 
@@ -16,8 +16,8 @@ inputs:
   inputBinding:
    position: 1
 
- assembly:
-  type: string
+ chromsizes:
+  type: File
   inputBinding:
    position: 2
 

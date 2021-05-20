@@ -60,3 +60,17 @@ docker run 4dndcic/4dn-bedtobeddb <run-xx.sh> <arg1> <arg2> ...
 # may need -v option to mount data file/folder if they are used as arguments.
 docker run -v /data1/:/d1/:rw -v /data2/:/d2/:rw 4dndcic/4dn-bedtobeddb <run-xx.sh> /d1/file1 /d2/file2 ...
 ```
+
+### run-bedtobeddb.sh
+This takes a bed file and a chromsizes files and converts it to beddb to be compatible with higlass visualization.
+* Input: a bed file and a chromsizes file
+* Output: a beddb file
+
+#### Usage
+Runs the following in the container
+```
+run-bedtibeddb.sh <bedfile> <chromsizes> <outdir> 
+# bedfile: input bed
+# chromsizes: chromsizes file
+# outdir: output directory
+```

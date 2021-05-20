@@ -26,10 +26,22 @@ RUN apt-get update -y && apt-get install -y \
     vim \
     wget \
     zlib1g-dev \
-    libmysqlclient-dev
-    
+    libmysqlclient-dev \
+    libsqlite3-dev
+
+# install python 3.6
+RUN wget https://www.python.org/ftp/python/3.6.0/Python-3.6.0.tar.xz
+RUN tar xvf Python-3.6.0.tar.xz
+WORKDIR Python-3.6.0
+RUN ./configure
+RUN make
+RUN make altinstall
+
+
 # installing python libraries
-RUN pip install scipy==1.1.0
+RUN pip3.6 install --upgrade pip
+RUN pip3.6 install cython==0.29.21
+
 
 # download tools
 WORKDIR /usr/local/bin
@@ -38,7 +50,7 @@ RUN . downloads.sh
 
 # set path
 ENV PATH=/usr/local/bin/scripts:$PATH
-    
+
 # supporting UTF-8
 ENV LC_ALL=C.UTF-8
 ENV LANG=C.UTF-8
